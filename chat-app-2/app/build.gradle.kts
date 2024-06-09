@@ -70,6 +70,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation ("com.google.dagger:hilt-android:2.51.1")
     ksp ("com.google.dagger:hilt-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
 
     // For instrumentation tests
     androidTestImplementation  ("com.google.dagger:hilt-android-testing:2.51.1")
@@ -78,10 +81,10 @@ dependencies {
     // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:2.51.1")
     kspTest ("com.google.dagger:hilt-compiler:2.51.1")
-    val nav_version = "2.7.7"
+    val navversion = "2.7.7"
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
-    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("androidx.navigation:navigation-compose:$navversion")
 
 
 }

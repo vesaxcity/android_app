@@ -6,18 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.chat_app.Screens.LoginScreen
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import androidx.navigation.compose.composable
 import com.example.chat_app.Screens.SignUpScreen
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 sealed class DestinationScreens(var route : String){
     object SignUp :DestinationScreens("signUp")
@@ -51,7 +50,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ChatAppNavigation(){
         val navController = rememberNavController()
-        val vm  = hiltViewModel()
+        val vm  = hiltViewModel<LCViewModel>()
         NavHost(navController = navController, startDestination = DestinationScreens.SignUp.route){
 
             composable(DestinationScreens.SignUp.route){
